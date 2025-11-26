@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { salesApi, saleItemsApi, productsApi, customersApi } from '../api/client';
-import type { Sale, Product, Customer } from '../types';
+import { salesApi, saleItemsApi, productsApi } from '../api/client';
+import type { Sale, Product } from '../types';
 import { Plus, Trash2, DollarSign, TrendingUp } from 'lucide-react';
 import CustomerSelector from './CustomerSelector';
 

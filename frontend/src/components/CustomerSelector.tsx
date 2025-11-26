@@ -36,7 +36,7 @@ export default function CustomerSelector({
   const fetchCustomers = async () => {
     try {
       const response = await customersApi.getAll();
-      setCustomers(response.data.results || response.data);
+      setCustomers((response.data as any).results || response.data);
     } catch (error) {
       console.error('Error fetching customers:', error);
     } finally {
@@ -61,7 +61,7 @@ export default function CustomerSelector({
     try {
       // Check for duplicate phone
       const existingCustomers = await customersApi.getAll();
-      const customersList = existingCustomers.data.results || existingCustomers.data;
+      const customersList = (existingCustomers.data as any).results || existingCustomers.data;
       const duplicate = customersList.find((c: Customer) => c.phone === manualCustomerData.phone.trim());
 
       if (duplicate) {

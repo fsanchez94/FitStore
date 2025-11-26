@@ -1,4 +1,4 @@
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, type FormEvent, useEffect } from 'react';
 import { purchasesApi, purchaseItemsApi, productsApi } from '../api/client';
 import type { Product, Purchase } from '../types';
 import { Plus, Trash2, AlertTriangle } from 'lucide-react';
@@ -49,7 +49,7 @@ export default function PurchaseOrderForm({ onSuccess, onCancel, editMode = fals
     const fetchProducts = async () => {
       try {
         const response = await productsApi.getAll();
-        setProducts(response.data.results || response.data);
+        setProducts((response.data as any).results || response.data);
       } catch (err) {
         console.error('Error fetching products:', err);
         setError('Failed to load products');

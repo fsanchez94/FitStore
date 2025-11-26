@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Package, Users, ShoppingCart, TrendingUp, Home, Settings, FileText } from 'lucide-react';
+import { Package, ShoppingCart, TrendingUp, Home, Settings, FileText } from 'lucide-react';
 
 interface LayoutProps {
   children: ReactNode;
