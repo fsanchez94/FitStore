@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./venv/Scripts/pip install:*)",
+      "Bash(./venv/Scripts/django-admin:*)",
+      "Bash(./venv/Scripts/python:*)",
+      "Bash(./venv/Scripts/pip freeze:*)",
+      "Bash(requirements.txt)",
+      "Bash(node --version:*)",
+      "Bash(npm --version)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(curl:*)",
+      "Bash(nul)",
+      "Bash(./venv/Scripts/pip:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(find:*)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "bypassPermissions"
+  }
+}

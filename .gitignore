@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+
+# Django
+*.sqlite3
+staticfiles/
+media/
+
+# Node
+node_modules/
+dist/
+.pnp
+.pnp.js
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build
+build/
+*.egg-info/
+
+# Windows reserved names
+nul
