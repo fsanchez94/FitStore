@@ -1,0 +1,8 @@
+[phases.build]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.setup]
+nixPkgs = ["python312"]
+
+[start]
+cmd = "python manage.py migrate && gunicorn fitstore_backend.wsgi"
