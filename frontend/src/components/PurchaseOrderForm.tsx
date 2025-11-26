@@ -127,7 +127,7 @@ export default function PurchaseOrderForm({ onSuccess, onCancel, editMode = fals
     // Refresh products list
     try {
       const response = await productsApi.getAll();
-      setProducts(response.data.results || response.data);
+      setProducts((response.data as any).results || response.data);
     } catch (err) {
       console.error('Error refreshing products:', err);
     }
