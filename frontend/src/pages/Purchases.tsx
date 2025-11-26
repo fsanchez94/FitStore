@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { purchasesApi } from '../api/client';
 import type { Purchase } from '../types';
-import { Plus, Edit, Trash2, Package, DollarSign, TrendingUp, CheckCircle, ChevronDown, ChevronRight } from 'lucide-react';
+import { Plus, Edit, Trash2, Package, DollarSign, CheckCircle, ChevronDown, ChevronRight } from 'lucide-react';
 import Modal from '../components/Modal';
 import PurchaseOrderForm from '../components/PurchaseOrderForm';
 
 export default function Purchases() {
   const [purchases, setPurchases] = useState<Purchase[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedPurchase, setSelectedPurchase] = useState<Purchase | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingPurchase, setEditingPurchase] = useState<Purchase | null>(null);
   const [deliveryDialogOpen, setDeliveryDialogOpen] = useState(false);
@@ -42,7 +41,7 @@ export default function Purchases() {
   const fetchPurchases = async () => {
     try {
       const response = await purchasesApi.getAll();
-      setPurchases(response.data.results || response.data);
+      setPurchases((response.data as any).results || response.data);
     } catch (error) {
       console.error('Error fetching purchases:', error);
     } finally {

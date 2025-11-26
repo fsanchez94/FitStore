@@ -18,7 +18,7 @@ export default function Suppliers() {
   const fetchSuppliers = async () => {
     try {
       const response = await suppliersApi.getAll();
-      setSuppliers(response.data.results || response.data);
+      setSuppliers((response.data as any).results || response.data);
     } catch (error) {
       console.error('Error fetching suppliers:', error);
     } finally {

@@ -38,7 +38,7 @@ export default function Sales() {
   const fetchSales = async () => {
     try {
       const response = await salesApi.getAll();
-      setSales(response.data.results || response.data);
+      setSales((response.data as any).results || response.data);
     } catch (error) {
       console.error('Error fetching sales:', error);
     } finally {

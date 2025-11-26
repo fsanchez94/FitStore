@@ -11,6 +11,7 @@ export interface Supplier {
   email?: string;
   phone?: string;
   address?: string;
+  webpage?: string;
   notes?: string;
   created_at: string;
   updated_at: string;

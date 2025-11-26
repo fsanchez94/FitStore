@@ -59,7 +59,7 @@ export default function SaleForm({ editMode = false, saleData, onSuccess, onCanc
   const fetchProducts = async () => {
     try {
       const response = await productsApi.getAll();
-      setProducts(response.data.results || response.data);
+      setProducts((response.data as any).results || response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
@@ -231,7 +231,7 @@ export default function SaleForm({ editMode = false, saleData, onSuccess, onCanc
         customer_phone: '',
         customer_email: '',
         sale_date: formData.sale_date,
-        status: 'pending',
+        status: 'pending' as const,
         notes: formData.notes,
       };
 

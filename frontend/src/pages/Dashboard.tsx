@@ -20,10 +20,10 @@ export default function Dashboard() {
           productsApi.getLowStock(),
         ]);
 
-        setProducts(productsRes.data.results || productsRes.data);
-        setSales(salesRes.data.results || salesRes.data);
-        setPurchases(purchasesRes.data.results || purchasesRes.data);
-        setLowStockProducts(lowStockRes.data.results || lowStockRes.data);
+        setProducts((productsRes.data as any).results || productsRes.data);
+        setSales((salesRes.data as any).results || salesRes.data);
+        setPurchases((purchasesRes.data as any).results || purchasesRes.data);
+        setLowStockProducts((lowStockRes.data as any).results || lowStockRes.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {

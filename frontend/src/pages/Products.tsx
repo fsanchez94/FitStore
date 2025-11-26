@@ -21,7 +21,7 @@ export default function Products() {
   const fetchProducts = async () => {
     try {
       const response = await productsApi.getAll();
-      setProducts(response.data.results || response.data);
+      setProducts((response.data as any).results || response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {
